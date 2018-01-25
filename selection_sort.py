@@ -18,19 +18,19 @@ print(alist)
 
 #-------------------------------------------------------------------------------
 
-def findsmallest(arr):
-    smallest = arr[0] # 存储最小的值
+def findsmallest(alist):
+    smallest = alist[0] # 存储最小的值
     smallest_index = 0 # 存储最小元素的索引
-    for i in range(1, len(arr)):
-        if arr[i] < smallest:
-            smallest = arr[i]
+    for i in range(1, len(alist)):
+        if alist[i] < smallest:
+            smallest = alist[i]
             smallest_index = i
     return smallest_index
 
-def selectionSort(arr):
-    new_arr = []
-    for i in range(len(arr)):
-        smallest = findsmallest(arr) # 找出数组总最小的元素，并将其加到新数组中
-        new_arr.append(arr.pop(smallest))
-    return new_arr
+def selectionSort(alist):
+    new_alist = []
+    for i in range(len(alist)):
+        smallest = findsmallest(alist) # 找出数组总最小的元素，并将其加到新数组中
+        new_alist.append(alist.pop(smallest))
+    return new_alist
 print selectionSort([5, 3, 6, 2, 10])
