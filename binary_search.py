@@ -1,27 +1,27 @@
 # -*- coding:utf-8 -*-
 
-def binary_search(alist, item):
+def binary_search(array, item):
     """二分查找,递归"""
-    n = len(alist)
+    n = len(array)
     if n > 0:
         mid = n//2
-        if alist[mid] == item:
+        if array[mid] == item:
             return True
-        elif item < alist[mid]:
-            return binary_search(alist[:mid], item)
+        elif item < array[mid]:
+            return binary_search(array[:mid], item)
         else:
-            return binary_search(alist[mid+1:], item)
+            return binary_search(array[mid+1:], item)
     return False
     
 # 通用二分查找
-def binary_search_2(alist, item):
+def binary_search_2(array, item):
     """二分查找， 非递归"""
-    n = len(alist)
+    n = len(array)
     low = 0
     high = n-1
     while low <= high:
         mid = (low + high)//2
-        guess = alist[mid]# 检查中间的元素 
+        guess = array[mid]# 检查中间的元素 
         if guess == item:# 找到元素
             return mid
         elif guess > item:# 数字大了
