@@ -1,10 +1,16 @@
 # -*- coding:utf-8 -*-
 
 # 时间复杂度O(n²)
-
-
+# 选择排序：每趟从待排序的记录中选出关键字最小的记录，顺序放在已排序的记录序列末尾，直到全部排序结束为止
+# 1.从待排序序列中找到关键字最小的元素
+# 2.如果最小元素不是待排序序列的第一个元素，将其和第一个元素互换
+# 3.从余下的N-1个元素中，找出关键字最小的元素，重复第1,2步，直到排序结束
+# 选择排序的比较次数和序列的初始排序无关，假设待排序的序列有N个元素，则比较次数总是N(N-1)/2
+# 移动次数与序列的初始排序有关。当序列为正序时，移动次数为0，反序时，移动次数为3N(N-1)/2
 def selection_sort(array):
     n = len(array)
+    if n == 0:
+        return []
     # 需要进行n-1次选择操作
     for i in range(n-1):
         # 记录最小位置
@@ -37,4 +43,3 @@ def selectionSort(array):
         smallest = findsmallest(array) # 找出数组总最小的元素，并将其加到新数组中
         new_array.append(array.pop(smallest))
     return new_array
-print selectionSort([5, 3, 6, 2, 10])
